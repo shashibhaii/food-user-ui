@@ -1,7 +1,8 @@
 import React from "react";
 import axios from "axios";
 import { Categories_response } from '../../../services/sampleData';
-
+import './category-list.css';
+import { Link } from 'react-router-dom'
 
 
 class CategoryList extends React.Component {
@@ -12,6 +13,9 @@ class CategoryList extends React.Component {
       categories: [],
       tokenvalue: localStorage.getItem("tokenKey")
     };
+  }
+  openMenuList(item) {
+    console.log(item);
   }
   async componentDidMount() {
     try {
@@ -38,7 +42,7 @@ class CategoryList extends React.Component {
     } catch (error) {
       console.log("Error",error);
     }
-}
+  }
 
   render(){
   return (
@@ -51,9 +55,11 @@ class CategoryList extends React.Component {
               return (
                     <div className="col-5 m-2">
                         <div className="card">
-                            <div className="card-body">
-                                <p className="card-text">{item?.category}</p>
-                            </div>
+                          <Link to="/menu-items" state={{ data: item }} className="link">
+                            <div className="card-body" onClick={() => this.openMenuList(item)}>
+                                  <p className="card-text">{item?.category}</p>
+                              </div>
+                          </Link>
                         </div>
                     </div>
                 )

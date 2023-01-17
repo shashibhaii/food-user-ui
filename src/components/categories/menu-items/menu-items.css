@@ -1,0 +1,17 @@
+.rts___nav___btn___container{
+    display: none !important;
+}
+
+.rts___tab___selected {
+    background-color: #0a3aca96 !important;
+}
+
+.rts___tabs___container {
+    margin: 3%;
+}
+
+.rts___btn{
+    margin: 2%;
+    font-size: 12px;
+    padding: 8px 12px;
+}

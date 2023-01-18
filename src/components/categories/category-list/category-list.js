@@ -10,8 +10,7 @@ class CategoryList extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      categories: [],
-      tokenvalue: localStorage.getItem("tokenKey")
+      categories: []
     };
   }
   openMenuList(item) {

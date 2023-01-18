@@ -5,3 +5,7 @@
 .card-body {
     padding: 0.5rem 0.5rem;
 }
+.link{
+    color: rgb(0 0 0);
+    text-decoration: none;
+}

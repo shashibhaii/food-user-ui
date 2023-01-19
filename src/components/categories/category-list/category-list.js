@@ -1,41 +1,39 @@
 import React from "react";
 import axios from "axios";
-import { Categories_response } from '../../../services/sampleData';
 import './category-list.css';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
+import { useLocation } from "react-router-dom";
 
 
 class CategoryList extends React.Component {
 
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
     this.state = {
-      categories: []
+      categories: [],
+      searchParams:null,
+      businessId:null
     };
   }
   openMenuList(item) {
-    console.log(item);
+    // console.log(item);
   }
   async componentDidMount() {
     try {
-    //   const response = await axios.get(
-    //     "https://aggregate-dispatch.herokuapp.com/api/aggregate/users",
-    //     {
-    //       params: {
-    //         aggregate_company_id: '41'
-    //       },
-    //       headers: {
-    //          "x_auth_token": `${this.state.tokenvalue}`,
-    //          "content-type": "application/json"
-    //       }
-    //     }
-    //   );
+      const response = await axios.get(
+        `https://food-service.osc-fr1.scalingo.io/api/business/get-all-menu-details?businessId=${this.state.businessId}`,
+        {
+          headers: {
+             "x-business-id": this.state.businessId,
+          }
+        }
+      );
       this.setState(
         {
-          categories: Categories_response.response
+          categories: response?.data.response
         },
         () => {
-          console.log("Response");
+          // console.log("Response");
           }
       );
     } catch (error) {
@@ -44,6 +42,7 @@ class CategoryList extends React.Component {
   }
 
   render(){
+    this.state.businessId = new URLSearchParams(window.location.search)?.get("businessId");
   return (
     <React.Fragment>
     <div className="container mt-4">
@@ -54,7 +53,7 @@ class CategoryList extends React.Component {
               return (
                     <div className="col-5 m-2">
                         <div className="card">
-                          <Link to="/menu-items" state={{ data: item }} className="link">
+                          <Link to="/menu-items" state={{ data: item,businessId:this.state.businessId }} className="link">
                             <div className="card-body" onClick={() => this.openMenuList(item)}>
                                   <p className="card-text">{item?.category}</p>
                               </div>

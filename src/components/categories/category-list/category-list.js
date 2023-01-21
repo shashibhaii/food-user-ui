@@ -2,7 +2,6 @@ import React from "react";
 import axios from "axios";
 import './category-list.css';
 import { Link } from 'react-router-dom';
-import { useLocation } from "react-router-dom";
 
 
 class CategoryList extends React.Component {

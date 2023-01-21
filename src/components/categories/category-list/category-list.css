@@ -3,9 +3,26 @@
 }
 
 .card-body {
-    padding: 0.5rem 0.5rem;
+    padding: 0rem 0rem;
+    background-image: url('../../../../sandwich.jpeg');
+    height: 80px !important;
+    border-radius: 10px;   
+    /* filter: blur(1px);  */
 }
 .link{
     color: rgb(0 0 0);
     text-decoration: none;
+}
+.container{
+    height: 100%;
+    display: inline-block;
+    margin: auto;
+    overflow: hidden;
+}
+.card-text{
+    font-weight: bold;
+    color: #ffffff;
+    position: absolute;
+    bottom: 2px;
+    left: 10px;
 }

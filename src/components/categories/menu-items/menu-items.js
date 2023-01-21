@@ -56,15 +56,17 @@ const MenuItems =  React.memo(props => {
     };
     return (
         <div className="MenuList">
-            <Tabs
-            activeTab={activeTabIndex}
-            onTabClick={onTabClick}
-            hideNavBtnsOnMobile={false}
-            >{
-            Menu_response?.response?.map((item,index) => (
-                <Tab key={index}>{item?.category}</Tab>
-            ))}
-            </Tabs>
+            <div className="tabs">
+                <Tabs
+                activeTab={activeTabIndex}
+                onTabClick={onTabClick}
+                hideNavBtnsOnMobile={false}
+                >{
+                Menu_response?.response?.map((item,index) => (
+                    <Tab key={index}>{item?.category}</Tab>
+                ))}
+                </Tabs>
+            </div>
             <div className="active-category px-4">
                 <div className="row mb-4">
                     <div className="col">
@@ -74,11 +76,11 @@ const MenuItems =  React.memo(props => {
                 <div>{
                     activeCategory?.menuItems.map((_,key) => (
                         <div className="row py-3">
-                            <div className="col-6 text-start">
-                                <div> {_?.itemName}</div>
-                                <div> {_?.itemDescription}</div>
+                            <div className="col-8 text-start">
+                                <div > { _?.itemName.charAt(0).toUpperCase() + _?.itemName.slice(1).toLowerCase()}</div>
+                                <div className="menu-desc"> {_?.itemDescription}</div>
                             </div>
-                            <div className="col-6 text-end">
+                            <div className="col-4 text-end">
                                 {_?.itemPrice}
                             </div>
                         </div>

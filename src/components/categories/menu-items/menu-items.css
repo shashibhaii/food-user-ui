@@ -3,7 +3,7 @@
 }
 
 .rts___tab___selected {
-    background-color: #0a3aca96 !important;
+    background-color: #000000 !important;
 }
 
 .rts___tabs___container {
@@ -13,5 +13,17 @@
 .rts___btn{
     margin: 2%;
     font-size: 12px;
-    padding: 8px 12px;
+    padding: 4px 10px;
+    border: 0px
+}
+
+.tabs{
+    box-shadow: 0px 3px 2px #d8d8d9;
+}
+
+.menu-desc{
+    margin-top: 2px;
+    font-size: 10px;
+    color: #a1a1a1d1;
+    font-style: italic;
 }

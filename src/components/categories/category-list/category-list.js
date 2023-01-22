@@ -44,25 +44,34 @@ class CategoryList extends React.Component {
     this.state.businessId = new URLSearchParams(window.location.search)?.get("businessId");
   return (
     <React.Fragment>
-    <div className="container mt-4">
-        <h3 className="text-left ml-4">Categories</h3>
-    <div className="row text-center mx-2">
-    {
-            this.state.categories.map((item,index) => {
-              return (
-                    <div className="col-5 m-2">
-                        <div className="card">
-                          <Link to="/menu-items" state={{ data: item,businessId:this.state.businessId }} className="link">
-                            <div className="card-body" onClick={() => this.openMenuList(item)}>
-                                  <p className="card-text">{item?.category}</p>
-                              </div>
-                          </Link>
-                        </div>
-                    </div>
-                )
-            })
-        }
+    <div className="container mt-2 p-0">
+        <div className="row company-info">
+          <div className="col-1 pl-2 company-logo">
+            <img className="img-fluid" src="https://i.ibb.co/jr4h1LL/not-found.jpg" alt="not-found" border="0"></img>
           </div>
+          <div className="col-11 pb-2 company-name">
+            <div className="table-info">You are sitting at</div>
+            <div className="seller-name">Take n Test - Belur</div>
+          </div>
+        </div>
+        <h3 className="text-right ml-4 welcome-text mx-2">What would you like to order ?</h3>
+        <div className="row text-center mx-2">
+        {
+                this.state.categories.map((item,index) => {
+                  return (
+                        <div className="col-6 my-2 p-0 mb-2">
+                            <div className="card">
+                              <Link to="/menu-items" state={{ data: item,businessId:this.state.businessId }} className="link">
+                                <div className="card-body" onClick={() => this.openMenuList(item)}>
+                                      <p className="card-text">{item?.category}</p>
+                                  </div>
+                              </Link>
+                            </div>
+                        </div>
+                    )
+                })
+            }
+        </div>
     </div>
     </React.Fragment>
   );

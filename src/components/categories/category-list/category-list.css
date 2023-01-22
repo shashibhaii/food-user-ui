@@ -5,7 +5,7 @@
 .card-body {
     padding: 0rem 0rem;
     background-image: url('../../../../sandwich.jpeg');
-    height: 80px !important;
+    height: 18vh !important;
     border-radius: 10px;   
     /* filter: blur(1px);  */
 }
@@ -25,4 +25,37 @@
     position: absolute;
     bottom: 2px;
     left: 10px;
+}
+
+.company-info{
+    text-align: initial;
+}
+.table-info{
+    font-size: 10px;
+    color: gray;
+}
+.company-info{
+    box-shadow: 0px 3px 2px #d8d8d9;
+}
+.welcome-text{
+    margin-bottom: 0px;
+    text-align: initial;
+    font-size: 13px;
+    margin-top: 15px;
+    font-style: italic;
+    color: #7e7e7e;
+}
+.company-logo{
+    padding-right: 0px;
+    padding-left: 5px;
+}
+.company-name{
+    padding-left: 10px;
+}
+.img-fluid{
+  margin-left: 8px;      
+}
+.seller-name{
+    font-size: 13px;
+    color: gray;
 }

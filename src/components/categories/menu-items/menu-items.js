@@ -68,7 +68,7 @@ const MenuItems =  React.memo(props => {
                 </Tabs>
             </div>
             <div className="active-category px-4">
-                <div className="row mb-4">
+                <div className="row mb-2">
                     <div className="col">
                         <h3> {activeCategory?.category}</h3>
                     </div>

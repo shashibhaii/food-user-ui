@@ -100,16 +100,16 @@ const MenuItems =  React.memo(props => {
                             {_.discountedPrice < _.itemPrice ? 
                                 <div>
                                     <span style={{textDecoration: 'line-through', color: 'gray', fontSize: '14px'}}>
-                                        {_.itemPrice}
+                                    ₹ {_.itemPrice}
                                     </span>
                                     <br />
                                     <span style={{fontFamily: 'Open Sans', fontWeight: 'bold', fontSize: '16px', color: 'green'}}>
-                                        {_.discountedPrice}
+                                    ₹ {_.discountedPrice}
                                     </span>
                                 </div> 
                                 : 
                                 <span style={{fontFamily: 'Open Sans', fontWeight: 'bold', fontSize: '16px'}}>
-                                    {_.itemPrice}
+                                 ₹ {_.itemPrice}
                                 </span>
                             }
                         </div>

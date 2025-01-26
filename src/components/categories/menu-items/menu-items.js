@@ -70,21 +70,51 @@ const MenuItems =  React.memo(props => {
             <div className="active-category px-4">
                 <div className="row mb-2">
                     <div className="col">
-                        <h3> {activeCategory?.category}</h3>
+                        <h3 style={{fontFamily: 'Montserrat', fontWeight: 'bold', fontSize: '24px', letterSpacing: '1px'}}>
+                            {activeCategory?.category}
+                        </h3>
                     </div>
                 </div>
                 <div>{
-                    activeCategory?.menuItems.map((_,key) => (
-                        <div className="row py-3">
-                            <div className="col-8 text-start">
-                                <div > { _?.itemName.charAt(0).toUpperCase() + _?.itemName.slice(1).toLowerCase()}</div>
-                                <div className="menu-desc"> {_?.itemDescription}</div>
+                  activeCategory?.menuItems.map((_,key) => (
+                    <div className="row py-3">
+                        <div className="col-8 text-start">
+                            <div>
+                                {_.isVeg === "veg" ? 
+                                    <span style={{color: 'green', fontSize: '12px'}}>&#9679;</span> 
+                                    : 
+                                    <span style={{color: 'red', fontSize: '12px'}}>&#9679;</span>
+                                }
+                                {' '}
+                                <span style={{fontFamily: 'Open Sans', fontWeight: 'bold', fontSize: '16px'}}>
+                                    { _?.itemName.charAt(0).toUpperCase() + _?.itemName.slice(1).toLowerCase()}
+                                </span>
                             </div>
-                            <div className="col-4 text-end">
-                                {_?.itemPrice}
+                            <div className="menu-desc">
+                                <span style={{fontFamily: 'Lato', fontStyle: 'italic', fontSize: '14px'}}>
+                                    {_?.itemDescription}
+                                </span>
                             </div>
                         </div>
-                    ))
+                        <div className="col-4 text-end">
+                            {_.discountedPrice < _.itemPrice ? 
+                                <div>
+                                    <span style={{textDecoration: 'line-through', color: 'gray', fontSize: '14px'}}>
+                                        {_.itemPrice}
+                                    </span>
+                                    <br />
+                                    <span style={{fontFamily: 'Open Sans', fontWeight: 'bold', fontSize: '16px', color: 'green'}}>
+                                        {_.discountedPrice}
+                                    </span>
+                                </div> 
+                                : 
+                                <span style={{fontFamily: 'Open Sans', fontWeight: 'bold', fontSize: '16px'}}>
+                                    {_.itemPrice}
+                                </span>
+                            }
+                        </div>
+                    </div>
+                ))
                 }
                 </div>
             </div>

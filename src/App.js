@@ -5,11 +5,11 @@ import { BrowserRouter, Route,Routes} from 'react-router-dom';
 
 function App() {
   return (
-    <div className="App">  
+    <div className="App"> 
       <BrowserRouter>
       <Routes>
         <Route path="/">
-          <Route path="catgories" element={<Categories />} />
+          <Route path="categories" element={<Categories />} />
           <Route path="menu-items" element={<MenuItems />} />
         </Route>
       </Routes>
